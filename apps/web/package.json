@@ -1,5 +1,5 @@
 {
-  "name": "@zyvara/web",
+  "name": "@ujjwal-ruhal/portfolio",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,18 +9,10 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@next/third-parties": "^15.1.4",
-    "framer-motion": "^11.18.2",
-    "gsap": "^3.12.7",
     "lucide-react": "^0.468.0",
     "next": "^15.1.4",
-    "next-pwa": "^5.6.0",
-    "nodemailer": "9.0.5",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-hot-toast": "^2.4.1",
-    "recharts": "^2.15.0",
-    "zustand": "^5.0.2"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.7",
