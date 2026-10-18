@@ -357,7 +357,9 @@ export default function Home() {
           </p>
         </div>
         <div className="projects">
-          {projects.map((p) => (
+          {[...projects]
+            .sort((first, second) => Number(first.number) - Number(second.number))
+            .map((p) => (
             <article
               className={`project ${p.featured ? "project-featured" : ""}`}
               key={p.title}
@@ -394,7 +396,7 @@ export default function Home() {
               </div>
               <div className="project-actions">
                 <a href={githubUrl} target="_blank" rel="noreferrer">
-                  <Github size={18} /> GitHub
+                  <Github size={18} /> GitHub profile
                 </a>
                 {"liveUrl" in p && p.liveUrl && (
                   <a
@@ -408,7 +410,7 @@ export default function Home() {
                 )}
               </div>
             </article>
-          ))}
+            ))}
         </div>
       </section>
       <section className="section-shell future-section" aria-labelledby="future-heading">
