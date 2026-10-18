@@ -28,6 +28,8 @@ const skills = [
       "JWT",
       "CRUD",
       "API integration",
+      "OTP verification",
+      "File uploads",
     ],
   ],
   [
@@ -47,7 +49,7 @@ const skills = [
   ],
   [
     "Tools & engineering",
-    ["Git", "GitHub", "Linux", "Render", "Selenium", "VS Code"],
+    ["Git", "GitHub", "Linux", "Render", "Railway", "Selenium", "VS Code"],
   ],
   [
     "AI & automation",
@@ -92,6 +94,32 @@ const projects = [
   },
   {
     number: "02",
+    title: "Sewa Setu — Old Age Pension Portal",
+    tag: "Live government-service workflow",
+    liveUrl:
+      "https://sewa-setu-old-age-pension-portal-production.up.railway.app/",
+    description:
+      "A production-deployed old-age pension application portal that guides applicants through a verified, document-backed government-service workflow.",
+    problem:
+      "Makes a multi-step pension application process easier to complete and track, while keeping applicant information structured for staff review.",
+    stack: [
+      "Python",
+      "Flask",
+      "OTP verification",
+      "File uploads",
+      "Railway",
+    ],
+    features: [
+      "Mobile-number verification with OTP",
+      "Personal, address, and bank-detail application form",
+      "Age-proof upload support for JPG and PDF files",
+      "Application-number generation and status tracking",
+      "Staff login entry point for operational workflows",
+      "Live production deployment on Railway",
+    ],
+  },
+  {
+    number: "03",
     title: "AI-Integrated Web Application",
     tag: "REST API · LLM integration",
     description:
@@ -114,7 +142,7 @@ const projects = [
     ],
   },
   {
-    number: "03",
+    number: "04",
     title: "Employee Information System",
     tag: "Academic project · C++",
     description:
@@ -335,11 +363,16 @@ export default function Home() {
                 </div>
               </div>
               <div className="project-actions">
-                <a href="https://github.com" target="_blank" rel="noreferrer">
+                <a href={githubUrl} target="_blank" rel="noreferrer">
                   <Github size={18} /> GitHub
                 </a>
-                {p.featured && (
-                  <a className="live" href="#contact">
+                {"liveUrl" in p && p.liveUrl && (
+                  <a
+                    className="live"
+                    href={p.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Live demo <ExternalLink size={17} />
                   </a>
                 )}
@@ -371,7 +404,8 @@ export default function Home() {
         <div className="integrations">
           <span>Backend → LLM APIs</span>
           <span>Backend → External APIs</span>
-          <span>Backend → Authentication</span>
+          <span>Backend → Authentication & OTP</span>
+          <span>Backend → Document uploads</span>
           <span>Backend → Deployment</span>
         </div>
       </section>
@@ -387,6 +421,7 @@ export default function Home() {
           <div className="experience-list">
             {[
               "Designed and deployed Productivity Hub",
+              "Built and deployed Sewa Setu, an old-age pension application portal",
               "Built RESTful APIs and JWT authentication flows",
               "Designed PostgreSQL/MySQL relational schemas and CRUD functionality",
               "Used Django ORM, Git/GitHub, Linux, Selenium, and production deployment tools",
