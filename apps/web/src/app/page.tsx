@@ -22,6 +22,8 @@ const skills = [
       "Python",
       "Django",
       "Flask",
+      "Node.js",
+      "Express.js",
       "REST APIs",
       "Django ORM",
       "Authentication",
@@ -30,6 +32,9 @@ const skills = [
       "API integration",
       "OTP verification",
       "File uploads",
+      "CSRF protection",
+      "Server-side validation",
+      "Session management",
     ],
   ],
   [
@@ -45,11 +50,29 @@ const skills = [
   ],
   [
     "Frontend",
-    ["HTML", "CSS", "JavaScript", "Django Templates", "Responsive design"],
+    [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Django Templates",
+      "EJS",
+      "Responsive design",
+    ],
   ],
   [
     "Tools & engineering",
-    ["Git", "GitHub", "Linux", "Render", "Railway", "Selenium", "VS Code"],
+    [
+      "Git",
+      "GitHub",
+      "Linux",
+      "Docker",
+      "Docker Compose",
+      "Python unittest",
+      "Render",
+      "Railway",
+      "Selenium",
+      "VS Code",
+    ],
   ],
   [
     "AI & automation",
@@ -59,6 +82,7 @@ const skills = [
       "Selenium automation",
       "Browser automation",
       "Structured responses",
+      "Cron scheduling",
     ],
   ],
   [
@@ -74,10 +98,10 @@ const skills = [
 ];
 const projects = [
   {
-    number: "01",
+    number: "02",
     title: "Productivity Hub",
-    tag: "Featured project",
-    featured: true,
+    tag: "Django · PostgreSQL",
+    featured: false,
     description:
       "A production-oriented productivity web application built with Django and PostgreSQL for managing tasks and productivity workflows.",
     problem:
@@ -93,29 +117,35 @@ const projects = [
     ],
   },
   {
-    number: "02",
+    number: "01",
     title: "Sewa Setu — Old Age Pension Portal",
-    tag: "Live government-service workflow",
+    tag: "Featured project · Live workflow",
+    featured: true,
     liveUrl:
       "https://sewa-setu-old-age-pension-portal-production.up.railway.app/",
     description:
-      "A production-deployed old-age pension application portal that guides applicants through a verified, document-backed government-service workflow.",
+      "A production-deployed Flask and PostgreSQL old-age pension portal with a secure, validated multi-step application workflow and scheduled pension-processing support.",
     problem:
-      "Makes a multi-step pension application process easier to complete and track, while keeping applicant information structured for staff review.",
+      "Makes a multi-step pension application easier to complete and track while protecting applicant data, validating submitted information, and supporting staff-side operations.",
     stack: [
       "Python",
       "Flask",
+      "PostgreSQL",
+      "Docker Compose",
+      "CSRF protection",
       "OTP verification",
       "File uploads",
       "Railway",
     ],
     features: [
-      "Mobile-number verification with OTP",
-      "Personal, address, and bank-detail application form",
-      "Age-proof upload support for JPG and PDF files",
+      "CSRF-protected forms and five-minute session lifetime",
+      "Mobile, personal, address, and bank-detail validation",
+      "Age-proof upload validation for JPG/PDF files with a 5 MB limit",
       "Application-number generation and status tracking",
-      "Staff login entry point for operational workflows",
-      "Live production deployment on Railway",
+      "Python unittest coverage for critical form and PDF-download behaviour",
+      "Dockerized Flask and PostgreSQL environment with Docker Compose",
+      "Cron-based deemed-approval processing investigated for IST scheduling",
+      "Production deployment and database-connection debugging on Railway/Render",
     ],
   },
   {
@@ -381,9 +411,48 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <section className="section-shell future-section" aria-labelledby="future-heading">
+        <div className="section-heading">
+          <p className="section-index">04 / IN THE PIPELINE</p>
+          <h2 id="future-heading">
+            Building toward<br />
+            useful discovery tools.
+          </h2>
+          <p className="subtle">
+            Concepts I plan to research and build as I strengthen my product
+            thinking, API integration, and backend architecture.
+          </p>
+        </div>
+        <article className="future-project">
+          <div className="future-label">PLANNED PROJECT / 01</div>
+          <div>
+            <h3>Song Discovery from Reels</h3>
+            <p>
+              A song-discovery tool for the moment when a user hears something
+              they like while scrolling an Instagram Reel. They would share the
+              Reel with the app, which would identify available audio metadata
+              and help locate the track across supported streaming platforms.
+            </p>
+          </div>
+          <div className="future-flow" aria-label="Planned Song Discovery flow">
+            <span>Share Reel</span><i>→</i><span>Read available audio data</span><i>→</i><span>Search legal platforms</span><i>→</i><strong>Show listening links</strong>
+          </div>
+          <div className="future-notes">
+            <span>Backend API orchestration</span>
+            <span>Metadata & search integration</span>
+            <span>Platform-result normalization</span>
+            <span>Legal streaming-link discovery</span>
+          </div>
+          <p className="future-disclaimer">
+            Planned with platform API availability, permissions, and music
+            licensing in mind. The goal is discovery and legal platform links,
+            not downloading or redistributing music.
+          </p>
+        </article>
+      </section>
       <section className="section-shell how-section">
         <div className="section-heading">
-          <p className="section-index">04 / HOW I BUILD</p>
+          <p className="section-index">05 / HOW I BUILD</p>
           <h2>
             A deliberate path
             <br />
@@ -410,7 +479,7 @@ export default function Home() {
         </div>
       </section>
       <section id="experience" className="section-shell timeline">
-        <p className="section-index">05 / EXPERIENCE</p>
+        <p className="section-index">06 / EXPERIENCE</p>
         <div className="timeline-content">
           <p className="date">JULY 2025 — PRESENT</p>
           <h2>
@@ -422,6 +491,7 @@ export default function Home() {
             {[
               "Designed and deployed Productivity Hub",
               "Built and deployed Sewa Setu, an old-age pension application portal",
+              "Strengthened Flask form security, validation, Docker testing, and scheduled processing workflows",
               "Built RESTful APIs and JWT authentication flows",
               "Designed PostgreSQL/MySQL relational schemas and CRUD functionality",
               "Used Django ORM, Git/GitHub, Linux, Selenium, and production deployment tools",
@@ -435,7 +505,7 @@ export default function Home() {
         </div>
       </section>
       <section id="education" className="section-shell education">
-        <p className="section-index">06 / EDUCATION & LEARNING</p>
+        <p className="section-index">07 / EDUCATION & LEARNING</p>
         <div className="education-grid">
           <article>
             <p className="date">SEPTEMBER 2022 — JULY 2025</p>
@@ -472,7 +542,7 @@ export default function Home() {
       </section>
       <section id="contact" className="contact">
         <div className="section-shell">
-          <p className="section-index">07 / CONTACT</p>
+          <p className="section-index">08 / CONTACT</p>
           <h2>
             Let&apos;s build
             <br />
